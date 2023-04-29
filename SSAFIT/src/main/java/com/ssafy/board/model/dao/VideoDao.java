@@ -2,6 +2,7 @@ package com.ssafy.board.model.dao;
 
 import java.util.*;
 
+import com.ssafy.board.model.dto.SearchCondition;
 import com.ssafy.board.model.dto.Video;
 
 public interface VideoDao {
@@ -13,4 +14,7 @@ public interface VideoDao {
 
 	// 해당 운동부위에 해당하는 영상 전체 가져오기
 	public List<Video> selectPart(String part);
+	
+	// 검색 기능
+	public List<Video> search(SearchCondition condition);
 }
