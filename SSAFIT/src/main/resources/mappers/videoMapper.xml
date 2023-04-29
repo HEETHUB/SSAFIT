@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.ssafy.board.model.dao.VideoDao">
+	
+	<select id="getVideoList" resultType="Video">
+		SELECT *
+		FROM videos
+	</select>
+	
+	  <select id="getVideoList" parameterType="String" resultType="Video" >
+      <!--  <option value="chest">가슴</option>
+  	   	<option value="abdominal">복근</option>
+ 	 	<option value="leg">하체</option>
+ 	 	<option value="shoulder">어깨</option>
+ 	 	<option value="back">등</option>-->   
+ 	 	SELECT * FROM videos WHERE part = #{part};
+        </select>
+	
+	<select id="getVideo" parameterType="int" resultType="Video">
+		SELECT *
+		FROM videos
+		WHERE videoId = #{videoId}
+	</select>
+	
+	<select id="search" parameterType="SearchCondition" resultType="Video">
+		SELECT *
+		FROM video
+		<where>
+			<if test="key != 'none'">
+				${key} = #{input}
+			</if>
+		</where>
+		<if test="orderBy != 'none'">
+			ORDER BY ${orderBy} ${orderDir}
+		</if>
+	</select>
+	
+</mapper>
+

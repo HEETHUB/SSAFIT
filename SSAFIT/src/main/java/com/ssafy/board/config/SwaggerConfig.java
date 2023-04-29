@@ -26,7 +26,7 @@ public class SwaggerConfig {
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
 				.title("SSAFIT PJT of Just Hur and Cho")
-				.description("그냥 허재웅과 조희태의 싸핏 프로젝트 레스트풀을 위한 사이트입니.")
+				.description("그냥 허재웅과 조희태의 싸핏 프로젝트 레스트풀을 위한 사이트입니다.")
 				.version("0.1")
 				.build();
 	}

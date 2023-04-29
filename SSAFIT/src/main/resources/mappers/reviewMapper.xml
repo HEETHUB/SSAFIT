@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.ssafy.board.model.dao.ReviewDao">
+ 	
+    <select id="getReviews" resultType="Review">
+  		SELECT 
+  			v.videoId as videoId,
+  			r.videoId as videoId,
+  			r.title,
+  			r.content,
+  			r.writer
+  		FROM 
+  			videos as v,
+  			reviews as r
+  		WHERE v.videoId = r.videoId
+  	</select>
+  	
+  	<!-- 리뷰 아이디를 통해 한 개 선택하기 -->
+  	<select id="getReview" parameterType="int" resultType="Review">
+  		SELECT *
+  		FROM reviews
+  		WHERE reviewId = #{reviewId}
+  	</select>
+	
+	<!-- 리뷰 등록 -->
+	<insert id="writeReview" parameterType="Review">
+		INSERT INTO reviews
+		VALUES(#{reviewId}, #{title}, #{content}, #{writer})
+	</insert>
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="removeReview" parameterType="int">
+		DELETE FROM reviews
+		WHERE videoId = #{videoId}
+	</delete>
+	
+	<!-- 리뷰 업데이트 -->
+	<update id="modifyReview" parameterType="Review">
+		UPDATE reviews
+		SET content = #{content}
+		WHERE reviewId=#{reviewId}
+	</update>
+  	
+</mapper>

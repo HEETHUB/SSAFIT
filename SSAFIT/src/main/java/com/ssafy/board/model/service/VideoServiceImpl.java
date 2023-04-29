@@ -20,7 +20,7 @@ public class VideoServiceImpl implements VideoService {
 	}
 
 	@Override
-	public List<Video> getVideoList(String part) {
+	public List<Video> getVideoListPart(String part) {
 		System.out.println(part+"부위에 해당하는 영상들을 가져왔습니다.");
 		return videoDao.selectPart(part);
 	}
