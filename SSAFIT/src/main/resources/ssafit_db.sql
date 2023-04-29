@@ -41,6 +41,7 @@ VALUES
 ("탄탄한 하체 만드는 필수 하체운동 5가지","준규빌더","https://youtu.be/hrXfOwoEwSI","https://img.youtube.com/vi/hrXfOwoEwSI/0.jpg",0,"하체")
 ;
 
+
 SELECT * FROM videos;
 SELECT * FROM reviews;
 SELECT * FROM users;
