@@ -12,10 +12,10 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- 서울5김봉준 데이타소스는 아무거나 써도됨 PPT spring jdbc 안에 있는거 써도됨.-->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-		<property name="url" value="jdbc:mysql://localhost:3306/ssafy_board?serverTimezone=UTC"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/ssafit_db?serverTimezone=UTC"/>
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-		<property name="username" value="root"/>
-		<property name="password" value="3241"/>
+		<property name="username" value="ssafy"/>
+		<property name="password" value="ssafy"/>
 	</bean>
 	
 	<!-- 마이바티스 사용하기 위한 sqlSessionFactory를 등록한다. -->

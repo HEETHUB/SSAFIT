@@ -3,10 +3,13 @@ package com.ssafy.board.model.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ssafy.board.model.dao.ReviewDao;
 import com.ssafy.board.model.dto.Review;
 
+@Service
 public class ReviewServiceImpl implements ReviewService {
 	
 	@Autowired
@@ -24,18 +27,21 @@ public class ReviewServiceImpl implements ReviewService {
 		return reviewDao.selectOne(reviewId);
 	}
 
+	@Transactional
 	@Override
 	public void writeReview(Review review) {
 		System.out.println("새로운 리뷰를 작성합니다.");
 		reviewDao.insertReview(review);
 	}
 
+	@Transactional
 	@Override
 	public void removeReview(int reviewId) {
 		System.out.println(reviewId+"에 해당하는 리뷰를 삭제합니다.");
 		reviewDao.deleteReview(reviewId);
 	}
 
+	@Transactional
 	@Override
 	public void modifyReview(Review review) {
 		System.out.println(review.getReviewId()+"에 해당하는 리뷰를 수정합니다.");

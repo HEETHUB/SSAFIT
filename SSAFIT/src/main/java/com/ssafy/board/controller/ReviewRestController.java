@@ -19,7 +19,7 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
-@RequestMapping("api/review")
+@RequestMapping("/api/review")
 @Api(tags = "리뷰 컨트롤러")
 @CrossOrigin("*")
 public class ReviewRestController {

@@ -7,22 +7,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.board.model.dto.User;
 import com.ssafy.board.model.service.UserService;
 
+import io.swagger.annotations.Api;
+
 //마숙 
-@Controller
+
+@RestController
+@RequestMapping("/api/user")
+@Api(tags = "유저 컨트롤러")
 public class UserController {
 	
 	@Autowired
 	private UserService userService;
 	
 	//로그인 (로그인 페이지)
-	@GetMapping("login")
-	public String loginForm() {
-		return "/user/loginform";
-	}
+//	@GetMapping("login")
+//	public String loginForm() {
+//		return "/user/loginform";
+//	}
 	//로그인 (실제 수행)
 	@PostMapping("login")
 	public String login(User user, HttpSession session) {

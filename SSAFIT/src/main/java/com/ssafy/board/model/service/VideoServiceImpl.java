@@ -3,16 +3,21 @@ package com.ssafy.board.model.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ssafy.board.model.dao.VideoDao;
 import com.ssafy.board.model.dto.SearchCondition;
 import com.ssafy.board.model.dto.Video;
 
+@Service
 public class VideoServiceImpl implements VideoService {
 	
-	@Autowired
 	private VideoDao videoDao;
 	
+	@Autowired
+	public void setBoardDao(VideoDao videoDao) {
+		this.videoDao = videoDao;
+	}
 	@Override
 	public List<Video> getVideoList() {
 		System.out.println("모든 영상을 가져왔습니다.");

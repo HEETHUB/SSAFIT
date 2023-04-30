@@ -1,4 +1,4 @@
- package com.ssafy.board.controller;
+package com.ssafy.board.controller;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiOperation;
 import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
-@RequestMapping("api/video")
+@RequestMapping("/api/video")
 @Api(tags = "비디오 컨트롤러")
 @CrossOrigin("*")
 public class VideoRestController {
@@ -36,7 +36,8 @@ public class VideoRestController {
 	@ApiOperation(value="영상 조회", notes = "검색 조건도 넣으면 같이 가져옴")
 	@GetMapping("/board")
 	public ResponseEntity<?> list(SearchCondition condition){
-		List<Video> list = videoService.search(condition); 
+//		List<Video> list = videoService.search(condition); 
+		List<Video> list = videoService.getVideoList();
 		
 		if(list == null || list.size() == 0)
 			return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
