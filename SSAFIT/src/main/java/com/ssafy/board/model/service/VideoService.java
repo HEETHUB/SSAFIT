@@ -10,7 +10,7 @@ public interface VideoService {
 	public List<Video> getVideoList();
 	
 	// 운동 부위별 영상 조회 
-	public List<Video> getVideoList(String part);
+	public List<Video> getVideoListPart(String part);
 	
 	// videoId에 해당하는 영상 검색
 	public Video getVideo(int videoId);
