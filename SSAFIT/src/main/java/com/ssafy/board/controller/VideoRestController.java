@@ -47,7 +47,6 @@ public class VideoRestController {
 	@GetMapping("/board/{id}")
 	public ResponseEntity<Video> detail(@PathVariable int id){
 		Video video = videoService.getVideo(id);
-		//만약 사용자가 잘못 보냈다... 처리를 해라 board라고 하는게 null이면 무엇인가 처리를 해봐라잉
 		return new ResponseEntity<Video>(video, HttpStatus.OK);
 	}
 	

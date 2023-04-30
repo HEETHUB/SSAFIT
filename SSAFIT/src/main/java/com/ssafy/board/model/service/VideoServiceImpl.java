@@ -12,12 +12,9 @@ import com.ssafy.board.model.dto.Video;
 @Service
 public class VideoServiceImpl implements VideoService {
 	
+	@Autowired
 	private VideoDao videoDao;
 	
-	@Autowired
-	public void setBoardDao(VideoDao videoDao) {
-		this.videoDao = videoDao;
-	}
 	@Override
 	public List<Video> getVideoList() {
 		System.out.println("모든 영상을 가져왔습니다.");
