@@ -1,7 +1,7 @@
 # SSAFIT Project by HEETHUB&JQuad
 
 SSAFIT 프로젝트는 SSAFY(Samsung Software Academy For Youth)에서 프로그래밍을 학습하며 진행한 작은 프로젝트이다. 
-운동 영상들을 운동 부위별로 추천해주는 웹사이트를 만들어보았다.<br><br>
+운동 영상들을 운동 부위별로 추천해주는 웹사이트를 만들어보았다. STS3를 사용하여 Spring Legacy Project를 기반으로 만들었다. <br><br>
 
 ### 1. 프로젝트 목표 및 사용 기술
     
@@ -27,4 +27,7 @@ SSAFIT 프로젝트는 SSAFY(Samsung Software Academy For Youth)에서 프로그
 <img src="https://github.com/HEETHUB/SSAFIT/assets/113952597/72982add-7b6c-4457-815a-def12dc95789"/>
 
 ### 4. 아키텍처 설명 및 맡은 부분
-
+- Model을 Service, DAO, DTO로 나누어 DTO를 MySql과 연동시킨 후 DAO를 호출하는 Service 객체의 메서드를 실행시키면 DAO가 DB에 접근하여 데이터를 가져오는 식의 아키텍처를 만들었다.
+- Controller 파트는 RESTful하게 만들어 운동 영상들과 그 영상들의 리뷰, 회원정보 등을 관리하였다. 
+- View 파트는 따로 만들지 않고 Talend API를 통해 내가 작성한 REST API가 잘 작동하는지 확인만 해보았다. 
+- 나는 DAO와 DB 파트를 제외한 Model의 Service 파트와 Controller 전반을 맡아 코드들을 작성했다.
